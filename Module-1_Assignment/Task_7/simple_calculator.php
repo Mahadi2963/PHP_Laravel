@@ -94,7 +94,7 @@
                 </select>
                 <br>
 
-                <button class="bg-primary" type="submit">Calculate</button><br>
+                <button class="bg-primary" type="submit">Calculate Result</button><br>
 
 
                 <?php
@@ -123,7 +123,7 @@
 
                         if (isset($result)) {
 
-                            printf("<span class='output'>Calculated result is = %.2f </span>", $result);
+                            printf("<span class='output'>Calculated result is = <b>%.2f</b> </span>", $result);
                         }
                     } else {
                         printf("<span class='output'>Enter a valid Number");
@@ -134,6 +134,7 @@
 
             </form>
         </div>
+
     </div>
 
 

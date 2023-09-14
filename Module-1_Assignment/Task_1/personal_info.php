@@ -42,9 +42,9 @@
 
     <?php
 
-    $name = "Mahadi Hasan";
+    $name = "Mahadi Hasan.";
     $age = 24;
-    $country = "Bangladesh";
+    $country = "Bangladesh.";
     $brief_intro = "Hello, I'm Mahadi Hasan and I come from Cumilla. I'm here for my strong passion for PHP & Laravel. Currently, I'm pursuing a degree in Computer Science and Engineering (BSCSE) at United International University (UIU). As a university student, I'm dedicated to honing my skills and knowledge in the field of computer science. I'm thrilled to be part of this community and look forward to engaging with all of you!";
 
     echo "

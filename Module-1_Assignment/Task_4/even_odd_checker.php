@@ -61,7 +61,7 @@
 
     <div class="container">
         <div class="head">
-            <h1 class="heading bg-primary text-white">Even Odd Checker</h1>
+            <h1 class="heading bg-primary text-white">Even or Odd Checker</h1>
         </div>
         <div class="box">
             <form action="" method="POST">

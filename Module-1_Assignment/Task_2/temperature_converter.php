@@ -80,8 +80,8 @@
 
                 <label for="option">Select Conversion Direction</label><br>
                 <select name="option" id="">
-                    <option value="celToFar">Celcius to Farenheit</option>
-                    <option value="farToCel">Farenheit to Celcius</option>
+                    <option value="celToFar">Celsius to Fahrenheit</option>
+                    <option value="farToCel">Fahrenheit to Celsius</option>
                 </select>
                 <br>
                 <label for="temp">Enter a temperature value: </label><br>
@@ -99,7 +99,7 @@
 
                         if ($option == "celToFar") {
                             $result = ($temp * 9 / 5) + 32;
-                            $unit = "Farenheit";
+                            $unit = "Fahrenheit";
                         } elseif ($option == "farToCel") {
                             $result = ($temp - 32) * (5 / 9);
                             $unit = "Celsius";
@@ -109,7 +109,7 @@
 
                         if (isset($result)) {
 
-                            printf("<span class='output'>Converted temperater is = %.2f °  %s </span>", $result, $unit);
+                            printf("<span class='output'>Converted temperature is = %.2f °  %s </span>", $result, $unit);
                         }
                     } else {
                         printf("<span class='output'>Enter a valid temperature");

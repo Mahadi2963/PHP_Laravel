@@ -72,7 +72,7 @@
 
     <div class="container">
         <div class="head">
-            <h1 class="heading bg-primary text-white">Comparison Tool</h1>
+            <h1 class="heading bg-primary text-white">Number Comparison Tool</h1>
         </div>
         <div class="box">
             <form action="" method="POST">
@@ -93,7 +93,7 @@
                     $num2 = $_POST['num2'];
 
                     if (is_numeric($num1) && is_numeric($num2)) {
-                        $result = ($num1 === $num2) ? "Both are equal number" : (($num1 > $num2) ? "First number: {$num1} is the large number" : "Second number: {$num2} is the large number");
+                        $result = ($num1 === $num2) ? "Both numbers are equal" : (($num1 > $num2) ? "First number: {$num1} is the largest number" : "Second number: {$num2} is the largest number");
 
                         if (isset($result)) {
 

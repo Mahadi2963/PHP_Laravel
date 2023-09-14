@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather reoprt</title>
+    <title>Weather report</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 
@@ -72,7 +72,7 @@
 
     <div class="container">
         <div class="head">
-            <h1 class="heading bg-primary text-white">Weather Reoprt</h1>
+            <h1 class="heading bg-primary text-white">Weather Report</h1>
         </div>
         <div class="box">
             <form action="" method="POST">
@@ -126,7 +126,7 @@
         </tr>
 
         <tr>
-            <th>Weathe Info</th>
+            <th>Weather Info</th>
             <td>It's Freezing</td>
             <td>It's Cool</td>
             <td>It's Warm</td>

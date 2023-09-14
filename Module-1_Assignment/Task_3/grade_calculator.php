@@ -73,7 +73,7 @@
 
     <div class="container">
         <div class="head">
-            <h1 class="heading bg-primary text-white">Grade Calculator Form</h1>
+            <h1 class="heading bg-primary text-white">Grade Calculator </h1>
         </div>
         <div class="box">
             <form action="" method="POST">
