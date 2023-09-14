@@ -51,6 +51,7 @@
         button {
             margin-top: 20px;
             width: 80%;
+            color: white;
         }
     </style>
 
@@ -60,7 +61,7 @@
 
     <div class="container">
         <div class="head">
-            <h1 class="heading bg-primary">Even Odd Checker</h1>
+            <h1 class="heading bg-primary text-white">Even Odd Checker</h1>
         </div>
         <div class="box">
             <form action="" method="POST">

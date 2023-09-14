@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temperature Converter</title>
+    <title>Simple calculator</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <style>
@@ -21,7 +21,7 @@
         }
 
         .box {
-            height: 350px;
+            height: 450px;
             width: 600px;
             box-shadow: 20px 20px 20px grey;
             margin: 40px auto;
@@ -57,7 +57,7 @@
         }
 
         button {
-            margin-top: 15px;
+            margin-top: 20px;
             width: 80%;
             color: white;
         }
@@ -73,46 +73,60 @@
 
     <div class="container">
         <div class="head">
-            <h1 class="heading bg-primary text-white">Temperature Converter</h1>
+            <h1 class="heading bg-primary text-white">Simple Calculator</h1>
         </div>
         <div class="box">
             <form action="" method="POST">
 
-                <label for="option">Select Conversion Direction</label><br>
-                <select name="option" id="">
-                    <option value="celToFar">Celcius to Farenheit</option>
-                    <option value="farToCel">Farenheit to Celcius</option>
+
+                <label for="number1">Enter first number: </label><br>
+                <input type="text" name="number1" id="" required><br>
+
+                <label for="number2">Enter second number: </label><br>
+                <input type="text" name="number2" id="" required><br>
+
+                <label for="operation">Select the Operation</label><br>
+                <select name="operation" id="">
+                    <option value="addition">Addition</option>
+                    <option value="subtraction">Subtraction</option>
+                    <option value="multiplication">Multiplication</option>
+                    <option value="division">Division</option>
                 </select>
                 <br>
-                <label for="temp">Enter a temperature value: </label><br>
-                <input type="text" name="temp" id="" required><br>
+
                 <button class="bg-primary" type="submit">Calculate</button><br>
 
 
                 <?php
 
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    $temp = $_POST['temp'];
-                    $option = $_POST['option'];
 
-                    if (is_numeric($temp)) {
 
-                        if ($option == "celToFar") {
-                            $result = ($temp * 9 / 5) + 32;
-                            $unit = "Farenheit";
-                        } elseif ($option == "farToCel") {
-                            $result = ($temp - 32) * (5 / 9);
-                            $unit = "Celsius";
+
+                    $number1 = $_POST['number1'];
+                    $number2 = $_POST['number2'];
+                    $operation = $_POST['operation'];
+
+                    if (is_numeric($number1) && is_numeric($number2)) {
+
+                        if ($operation == "addition") {
+                            $result = $number1 + $number2;
+                        } elseif ($operation == "subtraction") {
+                            $result = $number1 - $number2;
+                        } elseif ($operation == "multiplication") {
+                            $result = $number1 * $number2;
+                        } elseif ($operation == "division") {
+                            $result = $number1 / $number2;
                         } else {
-                            echo "Something Wrong!!";
+                            $result = "Something Wrong!!";
                         }
 
                         if (isset($result)) {
 
-                            printf("<span class='output'>Converted temperater is = %.2f °  %s </span>", $result, $unit);
+                            printf("<span class='output'>Calculated result is = %.2f </span>", $result);
                         }
                     } else {
-                        printf("<span class='output'>Enter a valid temperature");
+                        printf("<span class='output'>Enter a valid Number");
                     }
                 }
 

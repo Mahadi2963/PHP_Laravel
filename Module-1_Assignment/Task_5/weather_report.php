@@ -51,15 +51,18 @@
         button {
             margin-top: 20px;
             width: 80%;
+            color: white;
         }
 
         table,
         tr,
-        td {
+        td,
+        th {
             border: 2px solid black;
             padding: 20px;
             text-align: center;
             margin: 0 auto;
+            background: lightblue;
         }
     </style>
 
@@ -69,13 +72,13 @@
 
     <div class="container">
         <div class="head">
-            <h1 class="heading bg-primary">Weather Reoprt</h1>
+            <h1 class="heading bg-primary text-white">Weather Reoprt</h1>
         </div>
         <div class="box">
             <form action="" method="POST">
 
                 <label for="temp">Enter the Temperature: </label><br>
-                <input type="temp" name="temp" id="" required><br>
+                <input type="text" name="temp" id="" required><br>
 
                 <button class="bg-primary" type="temp">Weather Info</button><br><br>
 
@@ -85,19 +88,23 @@
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $temperature = $_POST['temp'];
 
+                    if (is_numeric($temperature)) {
 
-                    if ($temperature <= 0) {
-                        $message = "It's Freezing";
-                    } elseif ($temperature > 0 && $temperature <= 20) {
-                        $message = "It's Cool";
-                    } elseif ($temperature > 19 && $temperature <= 35) {
-                        $message = "It's Warm";
+                        if ($temperature <= 0) {
+                            $message = "It's Freezing";
+                        } elseif ($temperature > 0 && $temperature <= 20) {
+                            $message = "It's Cool";
+                        } elseif ($temperature > 19 && $temperature <= 35) {
+                            $message = "It's Warm";
+                        } else {
+                            $message = "It's Hot";
+                        }
+                        if (isset($message)) {
+
+                            echo $message;
+                        }
                     } else {
-                        $message = "It's Hot";
-                    }
-                    if (isset($message)) {
-
-                        echo $message;
+                        echo "Enter a valid temperature";
                     }
                 }
 
@@ -120,8 +127,8 @@
 
         <tr>
             <th>Weathe Info</th>
-            <td>"It's Freezing</td>
-            <td>"It's Cool"</td>
+            <td>It's Freezing</td>
+            <td>It's Cool</td>
             <td>It's Warm</td>
             <td>It's Hot</td>
 

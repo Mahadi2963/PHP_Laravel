@@ -35,7 +35,7 @@
 <body>
 
     <div class="container">
-        <div class="head bg-primary">
+        <div class="head bg-primary text-white">
             <h1>Personal Information</h1>
         </div>
     </div>

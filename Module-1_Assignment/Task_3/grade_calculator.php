@@ -51,6 +51,7 @@
         button {
             margin-top: 20px;
             width: 80%;
+            color: white;
         }
 
         table,
@@ -62,6 +63,7 @@
             margin: 0 auto;
             text-align: center;
             padding: 10px;
+            background: lightblue;
         }
     </style>
 
@@ -71,7 +73,7 @@
 
     <div class="container">
         <div class="head">
-            <h1 class="heading bg-primary">Grade Calculator Form</h1>
+            <h1 class="heading bg-primary text-white">Grade Calculator Form</h1>
         </div>
         <div class="box">
             <form action="" method="POST">
@@ -95,27 +97,30 @@
                     $score3 = $_POST['score3'];
 
 
-                    $average = ($score1 + $score2 + $score3) / 3;
+                    if (is_numeric($score1) && is_numeric($score2) && is_numeric($score3)) {
 
-                    if ($average >= 33 && $average < 33) {
-                        $result = "F";
-                    } elseif ($average >= 33 && $average < 50) {
-                        $result = "D";
-                    } elseif ($average >= 50 && $average < 70) {
-                        $result = "C";
-                    } elseif ($average >= 70 && $average < 80) {
-                        $result = "B";
-                    } elseif ($average >= 80 && $average <= 100) {
-                        $result = "A";
+                        $average = ($score1 + $score2 + $score3) / 3;
+
+                        if ($average >= 33 && $average < 33) {
+                            $result = "F";
+                        } elseif ($average >= 33 && $average < 50) {
+                            $result = "D";
+                        } elseif ($average >= 50 && $average < 70) {
+                            $result = "C";
+                        } elseif ($average >= 70 && $average < 80) {
+                            $result = "B";
+                        } elseif ($average >= 80 && $average <= 100) {
+                            $result = "A";
+                        } else {
+                            $result = "Wrong Input!";
+                        }
+
+                        if (isset($average)) {
+
+                            printf("<span class='output'>Average result is =  <b>%.2f</b>  And the grade is: <b>%s</b> </span>", $average, $result);
+                        }
                     } else {
-                        $result = "Wrong Input!";
-                    }
-
-
-
-                    if (isset($average)) {
-
-                        printf("<span class='output'>Average result is = %.2f And the grade is: <b>%s</b> </span>", $average, $result);
+                        printf("<span class='output'>Enter Valid scores</span>");
                     }
                 }
 
@@ -146,6 +151,7 @@
         </tr>
 
     </table>
+    <br><br>
 
 
 

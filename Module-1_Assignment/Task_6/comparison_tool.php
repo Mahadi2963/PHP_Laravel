@@ -51,6 +51,7 @@
         button {
             margin-top: 20px;
             width: 80%;
+            color: white;
         }
 
         table,
@@ -71,7 +72,7 @@
 
     <div class="container">
         <div class="head">
-            <h1 class="heading bg-primary">Comparison Tool</h1>
+            <h1 class="heading bg-primary text-white">Comparison Tool</h1>
         </div>
         <div class="box">
             <form action="" method="POST">
@@ -91,12 +92,15 @@
                     $num1 = $_POST['num1'];
                     $num2 = $_POST['num2'];
 
+                    if (is_numeric($num1) && is_numeric($num2)) {
+                        $result = ($num1 === $num2) ? "Both are equal number" : (($num1 > $num2) ? "First number: {$num1} is the large number" : "Second number: {$num2} is the large number");
 
-                    $result = ($num1 === $num2) ? "Both are equal number" : (($num1 > $num2) ? "First number: {$num1} is the large number" : "Second number: {$num2} is the large number");
+                        if (isset($result)) {
 
-                    if (isset($result)) {
-
-                        echo $result;
+                            echo $result;
+                        }
+                    } else {
+                        echo "Enter a valid number";
                     }
                 }
 
