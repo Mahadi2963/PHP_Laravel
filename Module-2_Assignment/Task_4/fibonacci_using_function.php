@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>break on condition</title>
+    <title>fibonacci using function</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 
@@ -61,53 +61,42 @@
 
     <div class="container">
         <div class="head">
-            <h1 class="heading bg-primary text-white">Break on Condition</h1>
+            <h1 class="heading bg-primary text-white">Fibonacci series printing using a Function</h1>
         </div>
         <div class="box">
             <form action="" method="POST">
 
-                <label for="total">How many fibonacci numbers want to print: </label><br>
-                <input type="text" name="total" id="" required><br>
+                <label for="numbers">How many fibonacci numbers want to print: </label><br>
+                <input type="text" name="numbers" id="" required><br>
 
 
-                <label for="break">Break when greater than of: </label><br>
-                <input type="text" name="break" id="" required><br>
                 <button class="bg-primary" type="submit">Print Numbers</button><br><br>
 
 
                 <?php
 
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    $total = $_POST['total'];
-                    $break = $_POST['break'];
+                    $numbers = $_POST['numbers'];
+
+                    if (is_numeric($numbers)) {
 
 
-
-                    if (is_numeric($total) && is_numeric($break)) {
-
-
-                        function fibonacci($total, $break)
+                        function fibonacci($numbers)
                         {
                             $first = 0;
                             $second = 1;
-                            $count = 2;
 
-                            echo "Fibonacci Series up to $total numbers and less than $break is given below:\n";
+                            echo "Fibonacci Series up to $numbers numbers are given below:<br>";
                             echo $first . " " . $second;
 
-                            for ($i = 2; $i < $total; $i++) {
+                            for ($i = 2; $i < $numbers; $i++) {
                                 $sum = $first + $second;
-                                if ($sum > $break) {
-                                    echo "<br>Total printed $count numbers.";
-                                    break;
-                                }
                                 echo " " . $sum;
-                                $count++;
                                 $first = $second;
                                 $second = $sum;
                             }
                         }
-                        fibonacci($total, $break);
+                        fibonacci($numbers);
                     } else {
                         printf("<span class='output'>Enter Valid Numbers</span>");
                     }
