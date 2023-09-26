@@ -6,6 +6,7 @@ $studentGrades = array(
     "student_3" => array("Math" => 15, "English" => 85, "Science" => 20)
 );
 
+
 function calculateAverageGrades($studentGrades)
 {
     foreach ($studentGrades as $studentNo => $scores) {

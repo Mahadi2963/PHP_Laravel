@@ -2,7 +2,6 @@
 
 $length = 12;
 
-
 function generatePassword($length)
 {
 
@@ -26,13 +25,11 @@ function generatePassword($length)
         $password .= $allCharacters[$randomIndex];
     }
 
-
     $password = str_shuffle($password);
 
     return $password;
 }
 
-
 $password = generatePassword($length);
 
-echo "generated Password is: $password\n";
+echo "generated Password is: $password";
