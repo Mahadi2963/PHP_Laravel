@@ -33,7 +33,7 @@ FROM Categories c
 GROUP BY c.name
 ORDER BY total_revenue DESC;
 
--- Query-3 :
+-- Query-4 :
 
 SELECT
     c.name AS customer_name,
