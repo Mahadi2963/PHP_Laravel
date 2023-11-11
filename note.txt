@@ -1,0 +1,2 @@
+Here are 6 Modules (Module 1 to Module 6). These modules are based on the PHP.
+From Module 7 (Laravel) journey will start. Hope for the best.
